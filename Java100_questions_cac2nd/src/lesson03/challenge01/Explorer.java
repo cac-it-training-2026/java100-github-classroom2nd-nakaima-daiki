@@ -48,11 +48,15 @@ public class Explorer {
 
 		//ここにfor文を記述する。
 
-			System.out.print("応募する人の名前を入れてください＞");
+		for (int i = 0; i < 5; i++) {
 
-			String name = br.readLine();
-			System.out.println("\n隊長：");
-			System.out.println(name + "さん合格！\n");
+		}
+
+		System.out.print("応募する人の名前を入れてください＞");
+
+		String name = br.readLine();
+		System.out.println("\n隊長：");
+		System.out.println(name + "さん合格！\n");
 
 		//ここに  } を記述する。
 

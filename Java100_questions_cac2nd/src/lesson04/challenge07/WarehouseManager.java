@@ -42,9 +42,29 @@ public class WarehouseManager {
 
 		int[] ABKosanArray = new int[5];
 
-
 		//ここに重複チェックおよび値の代入処理を記述する
+		int inputNum = 0;
+		boolean errFlag = false;
 
+		for (int i = 0; i < ABKosanArray.length; i++) {
+
+			do {
+				errFlag = false;
+
+				inputNum = (int) (Math.random() * 10) % 5 + 1;
+
+				for (int h = 0; h < ABKosanArray.length; h++) {
+
+					if (ABKosanArray[h] == inputNum) {
+						errFlag = true;
+
+						break;
+					}
+				}
+			} while (errFlag);
+
+			ABKosanArray[i] = inputNum;
+		}
 
 		System.out.println("E主任：");
 		System.out.println("AB興産の荷物の並べ替えをお願いします。\n");
@@ -61,9 +81,19 @@ public class WarehouseManager {
 		}
 		System.out.println("\nです。\n");
 
-
 		//ここに昇順にソートする処理を記述する
+		for (int i = 0; i < ABKosanArray.length - 1; i++) {
+			for (int h = i + 1; h < ABKosanArray.length; h++) {
+				if (ABKosanArray[i] > ABKosanArray[h]) {
+					int temp = ABKosanArray[i];
+					ABKosanArray[i] = ABKosanArray[h];
+					ABKosanArray[h] = temp;
 
+				}
+
+			}
+
+		}
 
 		System.out.println("小さい順に並べ替えた後の状態は、");
 		for (int i = 0; i < ABKosanArray.length; i++) {
@@ -74,9 +104,16 @@ public class WarehouseManager {
 		}
 		System.out.println("\nです。\n");
 
-
 		//ここに降順にソートする処理を記述する
-
+		for (int i = 0; i < ABKosanArray.length - 1; i++) {
+			for (int h = i + 1; h < ABKosanArray.length; h++) {
+				if (ABKosanArray[i] < ABKosanArray[h]) {
+					int temp = ABKosanArray[i];
+					ABKosanArray[i] = ABKosanArray[h];
+					ABKosanArray[h] = temp;
+				}
+			}
+		}
 
 		System.out.println("大きい順に並べ替えた後の状態は、");
 		for (int i = 0; i < ABKosanArray.length; i++) {
