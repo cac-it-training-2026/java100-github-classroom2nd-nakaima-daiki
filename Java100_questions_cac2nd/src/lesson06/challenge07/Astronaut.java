@@ -15,51 +15,58 @@
 package lesson06.challenge07;
 
 class Spaceship {
-    private int air;
-    private int fuel;
-    //ここにクラス変数を記述する。
+	private int air;
+	private int fuel;
+	private static int number;
+	//ここにクラス変数を記述する。
 
-    
-    
-    //ここに適切な処理を記述する。
-    //一隻目の宇宙船には燃料10をセットし、
-    //二席目の宇宙船には燃料20をセットしてください
-   
-    public Spaceship(int air, int fuel) {
-        this.air = air;
-        this.fuel = fuel;
-    }
+	//ここに適切な処理を記述する。
+	//一隻目の宇宙船には燃料10をセットし、
+	//二席目の宇宙船には燃料20をセットしてください
 
-    public int getFuel() {
-        return fuel;
-    }
+	public Spaceship() {
 
-    public void setFuel(int fuel) {
-        this.fuel = fuel;
-    }
+		number++;
 
-    public int getAir() {
-        return air;
-    }
+		if (number == 1) {
+			this.fuel = 10;
 
-    public void setAir(int air) {
-        this.air = air;
-    }
+		} else {
+			this.fuel = 20;
+		}
+	}
 
-    public static void showsum(){
-    	System.out.println("宇宙船の数は" + number + "隻です"); 
-    }
+	public int getFuel() {
+		return fuel;
+	}
+
+	public void setFuel(int fuel) {
+		this.fuel = fuel;
+	}
+
+	public int getAir() {
+		return air;
+	}
+
+	public void setAir(int air) {
+		this.air = air;
+	}
+
+	public static void showsum() {
+		System.out.println("宇宙船の数は" + number + "隻です");
+	}
 }
 
 public class Astronaut {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        Spaceship spaceship1 = new Spaceship();
-        System.out.println("1隻目の燃料は" + spaceship1.getFuel() + "です");        
-        Spaceship spaceship2 = new Spaceship();
-        System.out.println("2隻目の燃料は" + spaceship2.getFuel() + "です"); 
+		Spaceship spaceship1 = new Spaceship();
+		System.out.println("1隻目の燃料は" + spaceship1.getFuel() + "です");
+		Spaceship spaceship2 = new Spaceship();
+		System.out.println("2隻目の燃料は" + spaceship2.getFuel() + "です");
 
-        //ここに処理を記述する
-    }
+		//ここに処理を記述する
+		Spaceship.showsum();
+	}
 }

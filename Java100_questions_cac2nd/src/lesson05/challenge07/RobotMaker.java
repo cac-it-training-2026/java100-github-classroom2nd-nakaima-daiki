@@ -30,29 +30,67 @@ package lesson05.challenge07;
 //ここに問題6で作成したクラスに次の条件を足したクラスを作成してください。
 //メソッド名：getWater(引数なし、戻り値int、
 //現在の水量(フィールドwaterの値)を戻り値として返す)
+class Robot {
+	int energy;
+	int water;
+	String name;
+
+	void pumpWater() {
+		System.out.println("\n水を" + water + "リットル出します。\n");
+
+	}
+
+	void randomWater() {
+		water = (int) (Math.random() * 10) % 9 + 1;
+	}
+
+	void setWater(int water) {
+		this.water = water;
+	}
+
+	void makeOmelet(int eggNum, int butterNum) {
+		eggNum = eggNum / 2;
+		butterNum = butterNum / 5;
+		if (eggNum < butterNum) {
+			System.out.println(eggNum + "人分のオムレツを作成しました。");
+
+		} else {
+			System.out.println(butterNum + "人分のオムレツを作成しました。");
+		}
+	}
+
+	int getWater() {
+
+		return water;
+
+	}
+}
 
 public class RobotMaker {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 
-        System.out.println("Rさん：");
-        System.out.println("でもこれランダムに水を入れた時にロボット内の水量がわかりませんね。\n");
-        System.out.println("G博士：");
-        System.out.println("そう言えばそうじゃな。よし、ちょっと待っとれ。\n");
-        System.out.println("G博士：");
-        System.out.println("......出来た！現在の水量を表示する機能じゃ。\n");
+		System.out.println("Rさん：");
+		System.out.println("でもこれランダムに水を入れた時にロボット内の水量がわかりませんね。\n");
+		System.out.println("G博士：");
+		System.out.println("そう言えばそうじゃな。よし、ちょっと待っとれ。\n");
+		System.out.println("G博士：");
+		System.out.println("......出来た！現在の水量を表示する機能じゃ。\n");
 
-        int water = 0;
+		int water = 0;
 
-        //ここでRobotクラスのインスタンスを作り、
-        //（インスタンス名はrobot）
-        //randomWaterを実行する。
-        //getWaterを実行する。
+		//ここでRobotクラスのインスタンスを作り、
+		//（インスタンス名はrobot）
+		//randomWaterを実行する。
+		//getWaterを実行する。
+		Robot robot = new Robot();
+		robot.randomWater();
+		int Water = robot.getWater();
 
-        System.out.println("「ガ～ピィーガ～、ゲンザイノスイリョウハ" + water + "リットルデス。」\n");
+		System.out.println("「ガ～ピィーガ～、ゲンザイノスイリョウハ" + water + "リットルデス。」\n");
 
-        System.out.println("Rさん：");
-        System.out.println("なんか雑音が気になりますが、一応出来てますね。\n");
-    }
+		System.out.println("Rさん：");
+		System.out.println("なんか雑音が気になりますが、一応出来てますね。\n");
+	}
 
 }
