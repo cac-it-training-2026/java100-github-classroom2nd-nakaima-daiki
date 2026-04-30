@@ -24,7 +24,7 @@
 
 package lesson09.challenge01.Nurserry.main;
 
-import lesson09.challenge01.Nurserry.logic.Nurse;
+import lesson08.challenge03.logic.Nurse;
 import lesson09.challenge01.Nurserry.logic.NurserySchoolChild;
 
 public class NurserySchool {
